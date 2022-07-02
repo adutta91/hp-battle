@@ -1,6 +1,7 @@
 
-const game = {
-  id: null,
+const model = {
+  name: "",
+  numPlayers: 4,
   battleCards: [],
   players: [],
   locations: [],
@@ -8,4 +9,4 @@ const game = {
   enemies: [],
 }
 
-export default game;
+export default model;
