@@ -6,11 +6,11 @@ import { useLocalStorage } from '@mantine/hooks';
 const provider = new GoogleAuthProvider();
 
 const useUser = () => {
-  const [user, setUser] = useLocalStorage({ key: 'hp-battle-user', defaultValue: null })
+  const [user, setUser] = useLocalStorage({ key: 'hp-battle-user', defaultValue: null, getInitialValueInEffect: true })
   const { auth } = useFirebase()
 
   useEffect(() => {
-    if (!user) {
+    if (!user && auth) {
       signInWithPopup(auth, provider)
         .then((result) => {
           if (result.user) setUser(result.user)
