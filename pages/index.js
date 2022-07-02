@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import { AppShell, Center, Loader } from '@mantine/core';
 import Header from './components/Header'
+import useGames from './hooks/useGames';
 
 export default function Home() {
+  const { games } = useGames()
+  console.log(`games -------->>>>>>>>`, games)
   return (
     <div>
       <Head>
